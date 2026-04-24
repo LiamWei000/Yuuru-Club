@@ -10,7 +10,32 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Outfit:wght@300;400;500;600;800&family=Press+Start+2P&display=swap"
     rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Custom scrollbar for WebKit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    #year {
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -722,7 +747,7 @@
         Grup dibuat oleh <strong style="color:var(--sky)">Yumizuki Amara</strong></p>
       <p
         style="color:rgba(184,223,245,0.45);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:'Outfit',sans-serif;margin-top:4px;">
-        Website by <strong style="color:var(--sky)">Chiesa</strong></p>
+        Website by <strong style="color:var(--sky)">Liam</strong></p>
       <div style="position:relative;width:100%;height:36px;margin-top:20px;overflow:hidden;">
         <div
           style="position:absolute;top:50%;left:0;right:0;height:2px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,rgba(91,184,232,0.2) 0px,rgba(91,184,232,0.2) 6px,transparent 6px,transparent 14px);">
@@ -731,7 +756,8 @@
       </div>
     </div>
 
-    <p style="color:rgba(184,223,245,0.3);font-size:12px;letter-spacing:2px;margin-top:16px">© 2024 YUURU CLUB</p>
+    <p style="color:rgba(184,223,245,0.3);font-size:12px;letter-spacing:2px;margin-top:16px">© <span id="year"></span>
+      YUURU CLUB</p>
     <div class="social-links">
       <a href="#" class="social-link">🎵</a>
       <a href="#" class="social-link">📱</a>
@@ -740,6 +766,10 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
