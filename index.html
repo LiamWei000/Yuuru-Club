@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>YUURU CLUB</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Outfit:wght@300;400;500;600;800&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">YUURU<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero" data-scroll>Home</a></li>
+      <li><a href="#about" data-scroll>Tentang</a></li>
+      <li><a href="#skills" data-scroll>Keahlian</a></li>
+      <li><a href="#admin-section" data-scroll>Admin</a></li>
+      <li><a href="#game" data-scroll>Mini Game</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wave-bg"></div>
+    <div class="wave-bg2"></div>
+    <div class="ripple-ring"
+      style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:4s;"></div>
+    <div class="ripple-ring"
+      style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:4s;animation-delay:1.3s;">
+    </div>
+    <div class="ripple-ring"
+      style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:4s;animation-delay:2.6s;">
+    </div>
+
+    <div class="hero-content">
+      <div class="logo-circle">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+          <defs>
+            <radialGradient id="bgGrad" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="60%" stop-color="#d8eef8" />
+              <stop offset="100%" stop-color="#a8d4ee" />
+            </radialGradient>
+            <radialGradient id="orbGrad" cx="40%" cy="35%" r="55%">
+              <stop offset="0%" stop-color="#f5c4b0" />
+              <stop offset="50%" stop-color="#e8a090" />
+              <stop offset="100%" stop-color="#c87860" />
+            </radialGradient>
+            <clipPath id="circleClip">
+              <circle cx="100" cy="100" r="76" />
+            </clipPath>
+          </defs>
+          <circle cx="100" cy="100" r="97" fill="none" stroke="#9ecfe8" stroke-width="1.5" stroke-dasharray="4 3"
+            opacity="0.6" />
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#b8dff5" stroke-width="1" opacity="0.5" />
+          <circle cx="100" cy="100" r="76" fill="url(#bgGrad)" />
+          <g clip-path="url(#circleClip)" opacity="0.55">
+            <path d="M24,128 Q50,118 76,128 Q102,138 128,128 Q154,118 176,128" fill="none" stroke="#7ec5ea"
+              stroke-width="2.5" stroke-linecap="round" />
+            <path d="M24,140 Q50,130 76,140 Q102,150 128,140 Q154,130 176,140" fill="none" stroke="#9ed5ee"
+              stroke-width="2" stroke-linecap="round" />
+            <path d="M24,128 Q50,118 76,128 Q102,138 128,128 Q154,118 176,128 L176,180 L24,180 Z" fill="#7ec5ea"
+              fill-opacity="0.12" />
+          </g>
+          <circle cx="100" cy="52" r="13" fill="url(#orbGrad)" opacity="0.9" />
+          <circle cx="96" cy="48" r="4" fill="rgba(255,255,255,0.5)" />
+          <text x="100" y="108" text-anchor="middle" font-family="'Zen Kaku Gothic New',Georgia,serif" font-size="30"
+            font-weight="900" fill="#0d3d5c" letter-spacing="1">YUURU</text>
+          <text x="100" y="126" text-anchor="middle" font-family="'Outfit',Arial,sans-serif" font-size="10"
+            font-weight="600" fill="#1a6fa8" letter-spacing="5">CLUB</text>
+          <circle cx="100" cy="100" r="76" fill="none" stroke="#5bb8e8" stroke-width="2" opacity="0.7" />
+        </svg>
+      </div>
+      <h1 class="hero-title">YUURU<span class="club">CLUB</span></h1>
+      <p class="hero-tagline">Impersonate · Singer · Dubber</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="smooth(event,'about')">Kenali Kami</button>
+        <button class="btn-outline" onclick="smooth(event,'admin-section')">Para Admin</button>
+        <button class="btn-outline" onclick="smooth(event,'game')">Mini Game</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text fade-up">
+      <div class="section-label">Siapa Kami</div>
+      <h2 class="section-title">Suara yang<br>nggak bisa<br>dilupain.</h2>
+      <p>Yuuru Club adalah grup kreatif yang bergerak di bidang <strong>impersonasi suara</strong>, <strong>singing
+          cover</strong>, dan <strong>dubbing</strong>. Kami percaya setiap suara punya karakter uniknya sendiri.</p>
+      <p>Nama "Yuuru" terinspirasi dari kata Jepang <em>ゆうる</em> — artinya mengalir dengan bebas, seperti suara yang
+        mengalir tanpa batas.</p>
+      <div
+        style="margin-top:28px;background:rgba(255,255,255,0.5);backdrop-filter:blur(12px);border:1px solid rgba(91,184,232,0.25);border-left:3px solid var(--sky);border-radius:16px;padding:24px 28px;">
+        <div
+          style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sky);margin-bottom:12px;font-weight:600">
+          💬 Kata Owner</div>
+        <p style="font-size:15px;line-height:1.8;color:#4a7a9b;font-style:italic;margin:0">"Alasanku buat grup Yuuru
+          itu... aku sendiri suka impersonate anime, dan dulu aku pengen orang yang ada di grupku itu <strong
+            style="color:var(--ocean);font-style:normal">chill</strong>."</p>
+        <div style="margin-top:16px;display:flex;align-items:center;gap:12px;">
+          <div
+            style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--mist),var(--sky));display:flex;align-items:center;justify-content:center;font-size:16px">
+            👑</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--deep)">Yumizuki Amara</div>
+            <div style="font-size:11px;color:var(--sky);letter-spacing:1px">Owner & Pendiri Yuuru Club</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual fade-up" style="animation-delay:0.2s">
+      <div class="about-card">
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Bidang</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Kreativitas</div>
+          </div>
+          <div class="stat-item" style="grid-column:1/-1">
+            <div class="stat-num" style="font-size:22px;letter-spacing:-1px">18 Nov 2024</div>
+            <div class="stat-label">Tanggal Berdiri</div>
+          </div>
+        </div>
+        <div
+          style="margin-top:20px;background:rgba(255,255,255,0.7);border-radius:14px;padding:16px 20px;border:1px solid rgba(91,184,232,0.2);text-align:center;">
+          <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sky);margin-bottom:4px">
+            Est.</div>
+          <div
+            style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:28px;font-weight:900;color:var(--deep);letter-spacing:-1px">
+            November 2024</div>
+          <div style="font-size:12px;color:var(--sky);margin-top:4px">Lahir dari cinta impersonate anime 🎭</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <div id="skills"
+    style="border-radius:32px;margin:0 20px;padding:60px 32px;overflow:hidden;position:relative;z-index:2;background:linear-gradient(135deg,var(--deep) 0%,#1a4f6e 100%);">
+    <div class="section-label" style="color:var(--sky)">Apa yang Kami Lakukan</div>
+    <h2 class="section-title" style="color:#fff">Tiga Pilar<br>Yuuru.</h2>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-icon">🎭</div>
+        <div class="skill-name">Impersonate</div>
+        <div class="skill-desc">Meniru suara artis, karakter anime, tokoh film, atau siapa pun dengan presisi tinggi.
+          Bukan sekadar mirip — tapi benar-benar identik.</div>
+      </div>
+      <div class="skill-card fade-up" style="animation-delay:0.15s">
+        <div class="skill-icon">🎵</div>
+        <div class="skill-name">Singer</div>
+        <div class="skill-desc">Cover lagu dengan gaya original. Dari pop Jepang sampai R&B, dari ballad Korea sampai
+          jazz — semua punya tempatnya di sini.</div>
+      </div>
+      <div class="skill-card fade-up" style="animation-delay:0.3s">
+        <div class="skill-icon">🎙️</div>
+        <div class="skill-name">Dubbing</div>
+        <div class="skill-desc">Pengisi suara konten, karakter game, animasi, hingga iklan. Kami bisa jadi siapa pun
+          yang kamu butuhkan — cukup lewat suara.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN CARDS -->
+  <div id="admin-section">
+    <div class="admin-header">
+      <div class="label">Admin Yuuru Club</div>
+      <h2>Para Admin<br>di Balik Grup <span>Yuuru Club.</span></h2>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-track-outer">
+        <div class="slider-track" id="sliderTrack">
+
+          <!-- CARD 1 — SILVER — AMARA -->
+          <div class="admin-card" style="box-shadow:0 20px 60px rgba(150,160,180,0.35)">
+            <div class="card-inner">
+              <div class="card-bg"
+                style="background:linear-gradient(160deg,#2a2d35 0%,#4a5060 35%,#7a8499 65%,#b0b8c8 100%)"></div>
+              <div class="card-shimmer"></div>
+              <canvas class="ocean-canvas" id="ocean1"></canvas>
+              <div class="card-content">
+                <div class="avatar-ring"><svg viewBox="0 0 200 200" width="60" height="60"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="av1bg" cx="50%" cy="40%" r="55%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.95)" />
+                        <stop offset="100%" stop-color="rgba(200,210,225,0.7)" />
+                      </radialGradient>
+                      <radialGradient id="av1orb" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#f5c4b0" />
+                        <stop offset="100%" stop-color="#c87860" />
+                      </radialGradient>
+                      <clipPath id="cc1">
+                        <circle cx="100" cy="100" r="76" />
+                      </clipPath>
+                    </defs>
+                    <g class="logo-spin-outer">
+                      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"
+                        stroke-dasharray="6 4" />
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
+                      <circle cx="194" cy="100" r="4" fill="rgba(255,255,255,0.8)" />
+                    </g>
+                    <g class="logo-spin-inner">
+                      <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+                        stroke-dasharray="3 6" />
+                      <circle cx="100" cy="18" r="3" fill="rgba(255,255,255,0.6)" />
+                    </g>
+                    <circle cx="100" cy="100" r="76" fill="url(#av1bg)" />
+                    <g clip-path="url(#cc1)" opacity="0.5">
+                      <path d="M24,138 Q76,118 128,138 Q154,148 176,138" fill="none" stroke="rgba(122,132,153,0.8)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                      <path d="M24,150 Q76,130 128,150 Q154,160 176,150" fill="none" stroke="rgba(122,132,153,0.6)"
+                        stroke-width="2" stroke-linecap="round" />
+                      <path d="M24,138 Q76,118 128,138 L176,180 L24,180Z" fill="rgba(122,132,153,0.12)" />
+                    </g>
+                    <circle cx="100" cy="54" r="11" fill="url(#av1orb)" opacity="0.9" /><text x="100" y="112"
+                      text-anchor="middle" font-family="'Zen Kaku Gothic New',serif" font-size="26" font-weight="900"
+                      fill="#0d3d5c" letter-spacing="1">YUURU</text><text x="100" y="126" text-anchor="middle"
+                      font-family="'Outfit',sans-serif" font-size="8" font-weight="600" fill="#1a6fa8"
+                      letter-spacing="4">CLUB</text>
+                    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" />
+                  </svg></div>
+                <div class="card-name">Yumizuki Amara</div>
+                <div class="card-nickname"
+                  style="font-size:12px;line-height:1.6;margin-bottom:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+                  Amara<br><span style="font-style:normal;font-size:11px;opacity:0.6">👑 Owner GC</span></div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Sifat</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Chill guy, agak pemalu dan kalem di awal, lebih sering ngamatin dulu tapi kalau udah akrab bakalan
+                    random dan lebih terbuka 🌙</p>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Kesukaan</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Suka kucing 🐱, dengerin hip-hop, fav rapper Playboi Carti — with Carti i trust 🤝 Suka nyanyi dan
+                    nge-rap, suka hujan 🌧️, dan penggemar Itoshi Rin ⚽</p>
+                </div>
+              </div>
+              <div class="card-quote">"aman aja"</div>
+            </div>
+          </div>
+
+          <!-- CARD 2 — MAROON — NAYZHU -->
+          <div class="admin-card" style="box-shadow:0 20px 60px rgba(100,0,30,0.4)">
+            <div class="card-inner">
+              <div class="card-bg"
+                style="background:linear-gradient(160deg,#2a0010 0%,#5c0020 35%,#8b0030 65%,#b5184a 100%)"></div>
+              <div class="card-shimmer"></div>
+              <canvas class="ocean-canvas" id="ocean2"></canvas>
+              <div class="card-content">
+                <div class="avatar-ring"><svg viewBox="0 0 200 200" width="60" height="60"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="av2bg" cx="50%" cy="40%" r="55%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+                        <stop offset="100%" stop-color="rgba(255,200,215,0.6)" />
+                      </radialGradient>
+                      <radialGradient id="av2orb" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#f5c4b0" />
+                        <stop offset="100%" stop-color="#c87860" />
+                      </radialGradient>
+                      <clipPath id="cc2">
+                        <circle cx="100" cy="100" r="76" />
+                      </clipPath>
+                    </defs>
+                    <g class="logo-spin-outer">
+                      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+                        stroke-dasharray="6 4" />
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+                      <circle cx="194" cy="100" r="4" fill="rgba(255,255,255,0.6)" />
+                    </g>
+                    <g class="logo-spin-inner">
+                      <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"
+                        stroke-dasharray="3 6" />
+                      <circle cx="100" cy="18" r="3" fill="rgba(255,255,255,0.4)" />
+                    </g>
+                    <circle cx="100" cy="100" r="76" fill="url(#av2bg)" />
+                    <g clip-path="url(#cc2)" opacity="0.5">
+                      <path d="M24,138 Q76,118 128,138 Q154,148 176,138" fill="none" stroke="rgba(181,24,74,0.8)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                      <path d="M24,150 Q76,130 128,150 Q154,160 176,150" fill="none" stroke="rgba(181,24,74,0.6)"
+                        stroke-width="2" stroke-linecap="round" />
+                      <path d="M24,138 Q76,118 128,138 L176,180 L24,180Z" fill="rgba(181,24,74,0.12)" />
+                    </g>
+                    <circle cx="100" cy="54" r="11" fill="url(#av2orb)" opacity="0.9" /><text x="100" y="112"
+                      text-anchor="middle" font-family="'Zen Kaku Gothic New',serif" font-size="26" font-weight="900"
+                      fill="#0d3d5c" letter-spacing="1">YUURU</text><text x="100" y="126" text-anchor="middle"
+                      font-family="'Outfit',sans-serif" font-size="8" font-weight="600" fill="#1a6fa8"
+                      letter-spacing="4">CLUB</text>
+                    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+                  </svg></div>
+                <div class="card-name">Nayzhu, lyavica</div>
+                <div class="card-nickname"
+                  style="font-size:12px;line-height:1.6;margin-bottom:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+                  nayju · neju · enay · pej-maaf 🤭<br><span style="font-style:normal;font-size:11px;opacity:0.6">co-adm
+                    · singer · impersonator · dubber · editor</span></div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Sifat</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Galak judes kalo ga sejalan sama dia, punya sisi lain yang ga banyak orang tau. Pikirannya
+                    kemana-mana saking kritisnya, sampe orang pun ga nyangka sama apa yang dia pikirin. Sama orang baru
+                    selalu ngasi first impressions judes, tapi lama-lama baik, tengil, juga jail. Moodnya sering banget
+                    berubah-ubah, yahh semangat deh kamu 😭 Kalau tentang suara... harus ngasih yang terbaik, tapi kalo
+                    lagi males, asal-asalan juga jadi. Kata sebagian besar orang: dia ini <em>Tsundere?</em> Hati-hati
+                    kalo dia tiba-tiba baik banget sama kamu, alasannya? nanti kamu tau sendiri 👀</p>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Kesukaan</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Suka banget lagu genre R&B dan Dream Pop, demen nonton anime yang bikin nangis sesegukan, katanya
+                    sih bikin lega wkwk. Favoritnya susu coklat sama mie kuah, apalagi dinikmatin pas hujan 🌧️ Penggila
+                    impersonate, Vanitas, dan nyanyi pasti nomor 1. Kadang suka bikin karya sastra kayak puisi atau
+                    narasi singkat. Ngoleksi stiker-stiker aneh dan agak sedikit sus, kalo kamu dikirimin stikernya
+                    jangan dianggap serius ya, dia cuma lagi jail tuh! 🤫</p>
+                </div>
+              </div>
+              <div class="card-quote">"Baperan? skip deh kampunk"</div>
+            </div>
+          </div>
+
+          <!-- CARD 3 — BIRU LANGIT — ZUU -->
+          <div class="admin-card" style="box-shadow:0 20px 60px rgba(56,130,200,0.3)">
+            <div class="card-inner">
+              <div class="card-bg"
+                style="background:linear-gradient(160deg,#0d2240 0%,#1a4a80 35%,#2e7fc0 65%,#64aee8 100%)"></div>
+              <div class="card-shimmer"></div>
+              <canvas class="ocean-canvas" id="ocean3"></canvas>
+              <div class="card-content">
+                <div class="avatar-ring"><svg viewBox="0 0 200 200" width="60" height="60"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="av3bg" cx="50%" cy="40%" r="55%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+                        <stop offset="100%" stop-color="rgba(180,215,245,0.7)" />
+                      </radialGradient>
+                      <radialGradient id="av3orb" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#f5c4b0" />
+                        <stop offset="100%" stop-color="#c87860" />
+                      </radialGradient>
+                      <clipPath id="cc3">
+                        <circle cx="100" cy="100" r="76" />
+                      </clipPath>
+                    </defs>
+                    <g class="logo-spin-outer">
+                      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+                        stroke-dasharray="6 4" />
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+                      <circle cx="194" cy="100" r="4" fill="rgba(255,255,255,0.6)" />
+                    </g>
+                    <g class="logo-spin-inner">
+                      <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"
+                        stroke-dasharray="3 6" />
+                      <circle cx="100" cy="18" r="3" fill="rgba(255,255,255,0.4)" />
+                    </g>
+                    <circle cx="100" cy="100" r="76" fill="url(#av3bg)" />
+                    <g clip-path="url(#cc3)" opacity="0.5">
+                      <path d="M24,138 Q76,118 128,138 Q154,148 176,138" fill="none" stroke="rgba(46,127,192,0.8)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                      <path d="M24,150 Q76,130 128,150 Q154,160 176,150" fill="none" stroke="rgba(46,127,192,0.6)"
+                        stroke-width="2" stroke-linecap="round" />
+                      <path d="M24,138 Q76,118 128,138 L176,180 L24,180Z" fill="rgba(46,127,192,0.12)" />
+                    </g>
+                    <circle cx="100" cy="54" r="11" fill="url(#av3orb)" opacity="0.9" /><text x="100" y="112"
+                      text-anchor="middle" font-family="'Zen Kaku Gothic New',serif" font-size="26" font-weight="900"
+                      fill="#0d3d5c" letter-spacing="1">YUURU</text><text x="100" y="126" text-anchor="middle"
+                      font-family="'Outfit',sans-serif" font-size="8" font-weight="600" fill="#1a6fa8"
+                      letter-spacing="4">CLUB</text>
+                    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+                  </svg></div>
+                <div class="card-name">Lushizuu Fyurekumi</div>
+                <div class="card-nickname"
+                  style="font-size:12px;line-height:1.6;margin-bottom:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+                  Zuu<br><span style="font-style:normal;font-size:11px;opacity:0.6">Co-Admin</span></div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Sifat</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Punya dua sisi — pendiam yang suka mengamati (logika observasi), tapi tetap memperlakukan orang
+                    dengan baik bahkan sebelum benar-benar yakin. Selektif dalam membuka diri. Hangat, tapi hanya untuk
+                    orang yang tepat. Chill dan ngga baperan. Bisa menghabiskan waktu terlalu lama untuk satu hal,
+                    sampai kelelahan sendiri 🌙</p>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Kesukaan</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Suasana yang tenang dan dengerin cerita. Cinta matcha dan taro 🍵 Lagu-lagu R&B/melankolis. Suka
+                    anime, especially action dan story-driven (less romantic). Koleksi screenshot setiap momen di anime.
+                    Penyuka karakter fiksi 📸</p>
+                </div>
+              </div>
+              <div class="card-quote">"Menjadi gila di dunia yang sudah gila adalah sebuah kewarasan — disebut gila itu
+                normal."</div>
+            </div>
+          </div>
+
+          <!-- CARD 4 — BIRU LAUT — MIZUU -->
+          <div class="admin-card" style="box-shadow:0 20px 60px rgba(0,140,200,0.35)">
+            <div class="card-inner">
+              <div class="card-bg"
+                style="background:linear-gradient(160deg,#003d6b 0%,#0070b8 35%,#0099e0 65%,#33c1f5 100%)"></div>
+              <div class="card-shimmer"></div>
+              <canvas class="ocean-canvas" id="ocean4"></canvas>
+              <div class="card-content">
+                <div class="avatar-ring"><svg viewBox="0 0 200 200" width="60" height="60"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="av4bg" cx="50%" cy="40%" r="55%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.95)" />
+                        <stop offset="100%" stop-color="rgba(150,220,255,0.7)" />
+                      </radialGradient>
+                      <radialGradient id="av4orb" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#f5c4b0" />
+                        <stop offset="100%" stop-color="#c87860" />
+                      </radialGradient>
+                      <clipPath id="cc4">
+                        <circle cx="100" cy="100" r="76" />
+                      </clipPath>
+                    </defs>
+                    <g class="logo-spin-outer">
+                      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+                        stroke-dasharray="6 4" />
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+                      <circle cx="194" cy="100" r="4" fill="rgba(255,255,255,0.6)" />
+                    </g>
+                    <g class="logo-spin-inner">
+                      <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"
+                        stroke-dasharray="3 6" />
+                      <circle cx="100" cy="18" r="3" fill="rgba(255,255,255,0.4)" />
+                    </g>
+                    <circle cx="100" cy="100" r="76" fill="url(#av4bg)" />
+                    <g clip-path="url(#cc4)" opacity="0.5">
+                      <path d="M24,138 Q76,118 128,138 Q154,148 176,138" fill="none" stroke="rgba(0,153,224,0.8)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                      <path d="M24,150 Q76,130 128,150 Q154,160 176,150" fill="none" stroke="rgba(0,153,224,0.6)"
+                        stroke-width="2" stroke-linecap="round" />
+                      <path d="M24,138 Q76,118 128,138 L176,180 L24,180Z" fill="rgba(0,153,224,0.12)" />
+                    </g>
+                    <circle cx="100" cy="54" r="11" fill="url(#av4orb)" opacity="0.9" /><text x="100" y="112"
+                      text-anchor="middle" font-family="'Zen Kaku Gothic New',serif" font-size="26" font-weight="900"
+                      fill="#0d3d5c" letter-spacing="1">YUURU</text><text x="100" y="126" text-anchor="middle"
+                      font-family="'Outfit',sans-serif" font-size="8" font-weight="600" fill="#1a6fa8"
+                      letter-spacing="4">CLUB</text>
+                    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+                  </svg></div>
+                <div class="card-name">Hachimizuu</div>
+                <div class="card-nickname"
+                  style="font-size:12px;line-height:1.6;margin-bottom:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+                  Mizuu<br><span style="font-style:normal;font-size:11px;opacity:0.6">Co-Admin</span></div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Sifat</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Tipe yang duluan ngajak kenalan — banyak yang ngira kalem dan ramah, padahal kalo udah deket gabisa
+                    diem dan ceplas-ceplos 😄 Kaku ke orang baru, tapi jangan ragu ngajak temenan, dia seneng banget
+                    interaksi sama orang baru! Perfeksionis soal suara, bisa rekam berpuluh-puluh kali gara-gara
+                    grasak-grusuk — bahkan rela rekaman di dalam lemari kalau rumah lagi berisik 🗄️</p>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Kesukaan</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Novel, au angst, anime, drakor, kpop — pokoknya banyak! Anime suka genre action, drakor suka
+                    action-thriller apalagi yang anak sekolah berantem. Yang paling suka BROMANCE kpop — bromance ya,
+                    not BL ok ✋ I love friendship! Dan yang paling penting: SUKA LAUT banget banget 🌊 ke mana aja ayo,
+                    asal ada laut!</p>
+                </div>
+              </div>
+              <div class="card-quote">"Laut aja luas, masa hati aku sempit."</div>
+            </div>
+          </div>
+
+          <!-- CARD 5 — TELUR ASIN — SEBAS -->
+          <div class="admin-card" style="box-shadow:0 20px 60px rgba(80,140,150,0.3)">
+            <div class="card-inner">
+              <div class="card-bg"
+                style="background:linear-gradient(160deg,#1a3a3f 0%,#2a6570 35%,#4a9aa8 65%,#7ec8d4 100%)"></div>
+              <div class="card-shimmer"></div>
+              <canvas class="ocean-canvas" id="ocean5"></canvas>
+              <div class="card-content">
+                <div class="avatar-ring"><svg viewBox="0 0 200 200" width="60" height="60"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="av5bg" cx="50%" cy="40%" r="55%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+                        <stop offset="100%" stop-color="rgba(180,220,225,0.6)" />
+                      </radialGradient>
+                      <radialGradient id="av5orb" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#f5c4b0" />
+                        <stop offset="100%" stop-color="#c87860" />
+                      </radialGradient>
+                      <clipPath id="cc5">
+                        <circle cx="100" cy="100" r="76" />
+                      </clipPath>
+                    </defs>
+                    <g class="logo-spin-outer">
+                      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"
+                        stroke-dasharray="6 4" />
+                      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+                      <circle cx="194" cy="100" r="4" fill="rgba(255,255,255,0.6)" />
+                    </g>
+                    <g class="logo-spin-inner">
+                      <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"
+                        stroke-dasharray="3 6" />
+                      <circle cx="100" cy="18" r="3" fill="rgba(255,255,255,0.4)" />
+                    </g>
+                    <circle cx="100" cy="100" r="76" fill="url(#av5bg)" />
+                    <g clip-path="url(#cc5)" opacity="0.5">
+                      <path d="M24,138 Q76,118 128,138 Q154,148 176,138" fill="none" stroke="rgba(74,154,168,0.8)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                      <path d="M24,150 Q76,130 128,150 Q154,160 176,150" fill="none" stroke="rgba(74,154,168,0.6)"
+                        stroke-width="2" stroke-linecap="round" />
+                      <path d="M24,138 Q76,118 128,138 L176,180 L24,180Z" fill="rgba(74,154,168,0.12)" />
+                    </g>
+                    <circle cx="100" cy="54" r="11" fill="url(#av5orb)" opacity="0.9" /><text x="100" y="112"
+                      text-anchor="middle" font-family="'Zen Kaku Gothic New',serif" font-size="26" font-weight="900"
+                      fill="#0d3d5c" letter-spacing="1">YUURU</text><text x="100" y="126" text-anchor="middle"
+                      font-family="'Outfit',sans-serif" font-size="8" font-weight="600" fill="#1a6fa8"
+                      letter-spacing="4">CLUB</text>
+                    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+                  </svg></div>
+                <div class="card-name">Tamaya Rei (Sebas)</div>
+                <div class="card-nickname"
+                  style="font-size:12px;line-height:1.6;margin-bottom:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+                  Sebas · Tama<br><span style="font-style:normal;font-size:11px;opacity:0.6">co-adm · multi role</span>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Sifat</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Orangnya asik, suka bercanda dan absurd dari segi sifat, tapi tetep tegas sebagai admin Yuuru.
+                    Selera humor yang selalu nyambung dalam segala hal, perhatian ke semua admin dan member Yuuru.
+                    Selalu asik ke orang baru, dan kalo udah kenal lama... makin absurd dan seru buat diajak ngobrol dan
+                    ketawa bareng 😄</p>
+                </div>
+                <div style="margin-bottom:16px">
+                  <div
+                    style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px;font-weight:800;font-family:'Outfit',sans-serif;border-left:3px solid rgba(255,255,255,0.6);padding-left:8px;">
+                    Kesukaan</div>
+                  <p
+                    style="font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-family:'Outfit',sans-serif">
+                    Suka lagu rap dan lagu Jepang. Rap favoritnya Godzilla, Just Landed in Brooklyn, dll. Lagu Jepang
+                    yang disukai: Yoru ni Kakeru, Overdose, Matsuri 🎵</p>
+                </div>
+              </div>
+              <div class="card-quote">"Lu rispekhh lu asikhh gw asikhh kita asikhh"</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="slider-arrows">
+        <button class="arrow-btn" onclick="slide(-1)">←</button>
+        <button class="arrow-btn" onclick="slide(1)">→</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <section id="game">
+    <div class="section-label fade-up">Interaktif</div>
+    <h2 class="section-title fade-up">Mini Game<br>Yuuru.</h2>
+    <div class="game-container fade-up">
+      <div class="game-tabs">
+        <button class="tab-btn active" onclick="switchGame('quiz')">🎯 Voice Quiz</button>
+        <button class="tab-btn" onclick="switchGame('reflex')">⚡ Reflex Drop</button>
+        <button class="tab-btn" onclick="switchGame('pitch')">🎵 Pitch Match</button>
+        <button class="tab-btn" onclick="window.location.href='assets/thewayofthedodo.html'">🦤 The Way of the
+          Dodo</button>
+        <button class="tab-btn" onclick="window.location.href='assets/thirteenterriblestunts.html'">🙍‍♂️ Thirteen
+          Terrible Stunts</button>
+
+      </div>
+      <div id="quizGame">
+        <div class="game-title">Voice Quiz</div>
+        <div class="game-subtitle">Seberapa banyak yang kamu tau soal dunia suara & Yuuru Club?</div>
+        <div class="quiz-question" id="quizQuestion">Tekan Start buat mulai!</div>
+        <div class="quiz-options"><button class="quiz-opt" id="qo1" onclick="answerQuiz(0)" disabled></button><button
+            class="quiz-opt" id="qo2" onclick="answerQuiz(1)" disabled></button><button class="quiz-opt" id="qo3"
+            onclick="answerQuiz(2)" disabled></button><button class="quiz-opt" id="qo4" onclick="answerQuiz(3)"
+            disabled></button></div>
+        <div style="display:flex;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap">
+          <button class="game-btn" id="quizStartBtn" onclick="startQuiz()">▶ Start Quiz</button>
+          <div class="game-score-display">
+            <div class="score-box">
+              <div class="score-num" id="quizScore">0</div>
+              <div class="score-label">Score</div>
+            </div>
+            <div class="score-box">
+              <div class="score-num" id="quizQ">0</div>
+              <div class="score-label">Soal</div>
+            </div>
+          </div>
+          <div class="game-result" id="quizResult"></div>
+        </div>
+      </div>
+      <div id="reflexGame" style="display:none">
+        <div class="game-title">Reflex Drop ⚡</div>
+        <div class="game-subtitle">Klik lingkaran biru secepat mungkin sebelum hilang!</div>
+        <div id="reflexArena"
+          style="width:100%;height:280px;background:linear-gradient(135deg,rgba(13,61,92,0.9),rgba(26,111,168,0.7));border-radius:20px;position:relative;overflow:hidden;border:1px solid rgba(91,184,232,0.3);margin-bottom:24px;">
+          <div
+            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:rgba(255,255,255,0.4);font-size:14px;letter-spacing:2px"
+            id="reflexHint">Tekan Start!</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+          <button class="game-btn" id="reflexStartBtn" onclick="startReflex()">▶ Start</button>
+          <div class="game-score-display">
+            <div class="score-box">
+              <div class="score-num" id="reflexScore">0</div>
+              <div class="score-label">Hit</div>
+            </div>
+            <div class="score-box">
+              <div class="score-num" id="reflexMiss">0</div>
+              <div class="score-label">Miss</div>
+            </div>
+            <div class="score-box">
+              <div class="score-num" id="reflexTime">20</div>
+              <div class="score-label">Detik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pitchGame" style="display:none">
+        <div class="game-title">Pitch Match 🎵</div>
+        <div class="game-subtitle">Tebak suara yang cocok buat karakter ini!</div>
+        <div class="pitch-game">
+          <div class="pitch-display">
+            <div class="pitch-wave" id="pitchWave">
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+              <div class="pitch-bar idle"></div>
+            </div>
+            <div class="pitch-target" id="pitchTarget">?<small id="pitchTargetSub">Tekan Start</small></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:500px">
+            <button class="quiz-opt" id="pc1" disabled onclick="answerPitch(0)"></button><button class="quiz-opt"
+              id="pc2" disabled onclick="answerPitch(1)"></button><button class="quiz-opt" id="pc3" disabled
+              onclick="answerPitch(2)"></button><button class="quiz-opt" id="pc4" disabled
+              onclick="answerPitch(3)"></button>
+          </div>
+          <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center">
+            <button class="game-btn" id="pitchStartBtn" onclick="startPitch()">▶ Start</button>
+            <div class="game-score-display">
+              <div class="score-box">
+                <div class="score-num" id="pitchScore">0</div>
+                <div class="score-label">Score</div>
+              </div>
+              <div class="score-box">
+                <div class="score-num" id="pitchQ">0</div>
+                <div class="score-label">Soal</div>
+              </div>
+            </div>
+            <div class="game-result" id="pitchResult"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">YUURU</div>
+    <div class="footer-tagline">Impersonate · Singer · Dubber</div>
+    <div class="footer-divider"></div>
+
+    <div class="footer-card">
+      <canvas id="mcText" style="image-rendering:pixelated;max-width:100%;margin-bottom:12px;"></canvas>
+      <br>
+      <p
+        style="color:rgba(184,223,245,0.7);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Outfit',sans-serif;margin-top:6px;">
+        Grup dibuat oleh <strong style="color:var(--sky)">Yumizuki Amara</strong></p>
+      <p
+        style="color:rgba(184,223,245,0.45);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:'Outfit',sans-serif;margin-top:4px;">
+        Website by <strong style="color:var(--sky)">Chiesa</strong></p>
+      <div style="position:relative;width:100%;height:36px;margin-top:20px;overflow:hidden;">
+        <div
+          style="position:absolute;top:50%;left:0;right:0;height:2px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,rgba(91,184,232,0.2) 0px,rgba(91,184,232,0.2) 6px,transparent 6px,transparent 14px);">
+        </div>
+        <canvas id="pacCanvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+      </div>
+    </div>
+
+    <p style="color:rgba(184,223,245,0.3);font-size:12px;letter-spacing:2px;margin-top:16px">© 2024 YUURU CLUB</p>
+    <div class="social-links">
+      <a href="#" class="social-link">🎵</a>
+      <a href="#" class="social-link">📱</a>
+      <a href="#" class="social-link">🎭</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
